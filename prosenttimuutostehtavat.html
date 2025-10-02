@@ -1,0 +1,159 @@
+<!-- aunis_iyh_nilaairetam_n:(kt)_tynillop_telo -->
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Prosenttimuutostehtävät</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input {
+            margin-right: 10px;
+        }
+        button {
+            margin-right: 10px;
+        }
+        .task {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ohje: Kirjoita prosenttiluvut yhteen esim. 25%. </h2>
+
+    <div class="task">
+        <p>1. Tuotteen hinta nousi 80 eurosta 100 euroon. Mikä on prosentuaalinen muutos?</p>
+        <input id="answer1" type="text"/>
+        <button onclick="checkAnswer(1)">Tarkista</button>
+        <div id="feedback1"></div>
+        <div id="solution1" style="display:none; margin-top:5px;">
+            Ratkaisu: Muutos: \( 100 - 80 = 20 \) €, Prosenttimuutos: \( \frac{20}{80} \cdot 100 = 25 \% \)
+        </div>
+    </div>
+
+    <div class="task">
+        <p>2. Palkka laski 2500 eurosta 2250 euroon. Kuinka monta prosenttia se laski?</p>
+        <input id="answer2" type="text"/>
+        <button onclick="checkAnswer(2)">Tarkista</button>
+        <div id="feedback2"></div>
+        <div id="solution2" style="display:none; margin-top:5px;">
+            Ratkaisu: Muutos: \( 2500 - 2250 = 250 \) €, Prosenttimuutos: \( \frac{250}{2500} \cdot 100 = 10 \% \)
+        </div>
+    </div>
+
+    <div class="task">
+        <p>3. Koulussa oli 120 oppilasta, nyt on 150. Mikä on prosentuaalinen kasvu?</p>
+        <input id="answer3" type="text"/>
+        <button onclick="checkAnswer(3)">Tarkista</button>
+        <div id="feedback3"></div>
+        <div id="solution3" style="display:none; margin-top:5px;">
+            Ratkaisu: Muutos: \( 150 - 120 = 30 \), Prosenttimuutos: \( \frac{30}{120} \cdot 100 = 25 \% \)
+        </div>
+    </div>
+
+    <div class="task">
+        <p>4. Sähkölasku pieneni 90 eurosta 72 euroon. Kuinka monta prosenttia lasku pieneni?</p>
+        <input id="answer4" type="text"/>
+        <button onclick="checkAnswer(4)">Tarkista</button>
+        <div id="feedback4"></div>
+        <div id="solution4" style="display:none; margin-top:5px;">
+            Ratkaisu: Muutos: \( 90 - 72 = 18 \), Prosenttimuutos: \( \frac{18}{90} \cdot 100 = 20 \% \)
+        </div>
+    </div>
+
+    <div class="task">
+        <p>5. Tuote A maksaa 60 €, tuote B maksaa 75 €. Kuinka monta prosenttia B on kalliimpi kuin A?</p>
+        <input id="answer5" type="text"/>
+        <button onclick="checkAnswer(5)">Tarkista</button>
+        <div id="feedback5"></div>
+        <div id="solution5" style="display:none; margin-top:5px;">
+            Ratkaisu: Erotus: \( 75 - 60 = 15 \), Prosenttiero: \( \frac{15}{60} \cdot 100 = 25 \% \)
+        </div>
+    </div>
+
+    <div class="task">
+        <p>6. Tuote A maksaa 60 €, tuote B maksaa 75 €. Kuinka monta prosenttia A on halvempi kuin B?</p>
+        <input id="answer6" type="text"/>
+        <button onclick="checkAnswer(6)">Tarkista</button>
+        <div id="feedback6"></div>
+        <div id="solution6" style="display:none; margin-top:5px;">
+            Ratkaisu: Erotus: \( 75 - 60 = 15 \), Prosenttiero: \( \frac{15}{75} \cdot 100 = 20 \% \)
+        </div>
+    </div>
+
+    <div class="task">
+        <p>7. Oppilas sai kokeesta ensin 40 pistettä, seuraavalla kerralla 52. Mikä on prosentuaalinen parannus?</p>
+        <input id="answer7" type="text"/>
+        <button onclick="checkAnswer(7)">Tarkista</button>
+        <div id="feedback7"></div>
+        <div id="solution7" style="display:none; margin-top:5px;">
+            Ratkaisu: Muutos: \( 52 - 40 = 12 \), Prosenttimuutos: \( \frac{12}{40} \cdot 100 = 30 \% \)
+        </div>
+    </div>
+
+    <div class="task">
+        <p>8. Tuotteen alkuperäinen hinta oli 200 €, ja se alennettiin 160 euroon. Mikä on alennusprosentti?</p>
+        <input id="answer8" type="text"/>
+        <button onclick="checkAnswer(8)">Tarkista</button>
+        <div id="feedback8"></div>
+        <div id="solution8" style="display:none; margin-top:5px;">
+            Ratkaisu: Alennus: \( 200 - 160 = 40 \), Prosenttialennus: \( \frac{40}{200} \cdot 100 = 20 \% \)
+        </div>
+    </div>
+
+    <div class="task">
+        <p>9. Kaupungin väkiluku kasvoi 10&nbsp;000:sta 11&nbsp;500:aan. Mikä on prosentuaalinen kasvu?</p>
+        <input id="answer9" type="text"/>
+        <button onclick="checkAnswer(9)">Tarkista</button>
+        <div id="feedback9"></div>
+        <div id="solution9" style="display:none; margin-top:5px;">
+            Ratkaisu: Muutos: \( 11\,500 - 10\,000 = 1\,500 \), Prosenttimuutos: \( \frac{1\,500}{10\,000} \cdot 100 = 15 \% \)
+        </div>
+    </div>
+
+    <div class="task">
+        <p>10. Yrityksen liikevaihto oli viime vuonna 1,2 miljoonaa euroa, tänä vuonna 1,5 miljoonaa. Mikä on prosentuaalinen kasvu?</p>
+        <input id="answer10" type="text"/>
+        <button onclick="checkAnswer(10)">Tarkista</button>
+        <div id="feedback10"></div>
+        <div id="solution10" style="display:none; margin-top:5px;">
+            Ratkaisu: Muutos: \( 1{,}5 - 1{,}2 = 0{,}3 \), Prosenttimuutos: \( \frac{0{,}3}{1{,}2} \cdot 100 = 25 \% \)
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(index) {
+            const correctAnswers = {
+                1: "25%",
+                2: "10%",
+                3: "25%",
+                4: "20%",
+                5: "25%",
+                6: "20%",
+                7: "30%",
+                8: "20%",
+                9: "15%",
+                10: "25%"
+            };
+            const userAnswer = document.getElementById("answer" + index).value.trim();
+            const feedback = document.getElementById("feedback" + index);
+            const solution = document.getElementById("solution" + index);
+            if (userAnswer === correctAnswers[index]) {
+                feedback.innerHTML = "Oikein!";
+                feedback.style.color = "green";
+            } else {
+                feedback.innerHTML = "Väärin. Oikea vastaus on " + correctAnswers[index];
+                feedback.style.color = "red";
+            }
+            solution.style.display = "block";
+        }
+    </script>
+</body>
+</html>

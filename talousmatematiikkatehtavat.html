@@ -1,0 +1,139 @@
+
+<!-- aunis_iyh_nilaairetam_n:(kt)_tynillop_telo -->
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Talousmatematiikan tehtävät</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .task {
+            margin-bottom: 20px;
+        }
+        .solution {
+            display: none;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Talousmatematiikan tehtävät</h2>
+    <p><strong>Ohje:</strong> Ratkaiset tehävät, kirjoita vastaukseen vain lukuarvo, esim. 35 </p>
+
+    <div class="task">
+        <p>1. Takin alkuperäinen hinta on 120 €. Siitä saa 25 % alennuksen. Mikä on alennettu hinta?</p>
+        <input id="answer1" type="text"/>
+        <button onclick="checkAnswer(1)">Tarkista</button>
+        <div id="feedback1"></div>
+        <div id="solution1" class="solution">Ratkaisu: \( 0{,}25 \cdot 120 = 30 \), \( 120 - 30 = 90 \)</div>
+    </div>
+
+    <div class="task">
+        <p>2. Mikä on 15 % luvusta 200?</p>
+        <input id="answer2" type="text"/>
+        <button onclick="checkAnswer(2)">Tarkista</button>
+        <div id="feedback2"></div>
+        <div id="solution2" class="solution">Ratkaisu: \( 0{,}15 \cdot 200 = 30 \)</div>
+    </div>
+
+    <div class="task">
+        <p>3. 3 kg omenoita maksaa 6 €. Mikä on kilohinta?</p>
+        <input id="answer3" type="text"/>
+        <button onclick="checkAnswer(3)">Tarkista</button>
+        <div id="feedback3"></div>
+        <div id="solution3" class="solution">Ratkaisu: \( \frac{6}{3} = 2 \)</div>
+    </div>
+
+    <div class="task">
+        <p>4. Tuotteen veroton hinta on 80 €. Arvonlisävero on 24 %. Mikä on verollinen hinta?</p>
+        <input id="answer4" type="text"/>
+        <button onclick="checkAnswer(4)">Tarkista</button>
+        <div id="feedback4"></div>
+        <div id="solution4" class="solution">Ratkaisu: \( 0{,}24 \cdot 80 = 19{,}20 \), \( 80 + 19{,}20 = 99{,}20 \)</div>
+    </div>
+
+    <div class="task">
+        <p>5. Tuotteen verollinen hinta on 124 €. ALV on 24 %. Mikä on veroton hinta?</p>
+        <input id="answer5" type="text"/>
+        <button onclick="checkAnswer(5)">Tarkista</button>
+        <div id="feedback5"></div>
+        <div id="solution5" class="solution">Ratkaisu: \( \frac{124}{1{,}24} = 100 \)</div>
+    </div>
+
+    <div class="task">
+        <p>6. Pankkitalletus on 500 € ja korkoprosentti on 2 %. Mikä on korko vuoden kuluttua?</p>
+        <input id="answer6" type="text"/>
+        <button onclick="checkAnswer(6)">Tarkista</button>
+        <div id="feedback6"></div>
+        <div id="solution6" class="solution">Ratkaisu: \( 0{,}02 \cdot 500 = 10 \)</div>
+    </div>
+
+    <div class="task">
+        <p>7. Tuotteen hinta nousi 50 eurosta 65 euroon. Kuinka monta prosenttia hinta nousi?</p>
+        <input id="answer7" type="text"/>
+        <button onclick="checkAnswer(7)">Tarkista</button>
+        <div id="feedback7"></div>
+        <div id="solution7" class="solution">Ratkaisu: \( 65 - 50 = 15 \), \( \frac{15}{50} \cdot 100 = 30 \% \)</div>
+    </div>
+
+    <div class="task">
+        <p>8. Laina on 1200 € ja se maksetaan 12 kuukaudessa. Mikä on kuukausierä?</p>
+        <input id="answer8" type="text"/>
+        <button onclick="checkAnswer(8)">Tarkista</button>
+        <div id="feedback8"></div>
+        <div id="solution8" class="solution">Ratkaisu: \( \frac{1200}{12} = 100 \)</div>
+    </div>
+
+    <div class="task">
+        <p>9. Henkilö säästää 150 € kuukaudessa ja hänen kuukausitulonsa ovat 2500 €. Mikä on säästöprosentti?</p>
+        <input id="answer9" type="text"/>
+        <button onclick="checkAnswer(9)">Tarkista</button>
+        <div id="feedback9"></div>
+        <div id="solution9" class="solution">Ratkaisu: \( \frac{150}{2500} \cdot 100 = 6 \% \)</div>
+    </div>
+
+    <div class="task">
+        <p>10. Ostat 2 paitaa (á 25 €), 1 housut (40 €) ja kengät (60 €). Mikä on kokonaishinta?</p>
+        <input id="answer10" type="text"/>
+        <button onclick="checkAnswer(10)">Tarkista</button>
+        <div id="feedback10"></div>
+        <div id="solution10" class="solution">Ratkaisu: \( 2 \cdot 25 + 40 + 60 = 150 \)</div>
+    </div>
+
+    <script>
+        function checkAnswer(index) {
+            const correctAnswers = {
+                1: "90",
+                2: "30",
+                3: "2",
+                4: "99,20",
+                5: "100",
+                6: "10",
+                7: "30",
+                8: "100",
+                9: "6",
+                10: "150"
+            };
+            const userAnswer = document.getElementById("answer" + index).value.trim();
+            const feedback = document.getElementById("feedback" + index);
+            const solution = document.getElementById("solution" + index);
+            if (userAnswer === correctAnswers[index]) {
+                feedback.innerHTML = "Oikein!";
+                feedback.style.color = "green";
+            } else {
+                feedback.innerHTML = "Väärin. Oikea vastaus on " + correctAnswers[index];
+                feedback.style.color = "red";
+            }
+            solution.style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!-- aunis_iyh_nilaairetam_n:(kt)_tynillop_telo -->
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Prosentti, desimaali ja murtoluku - tehtävät</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input {
+            margin-right: 10px;
+        }
+        .solution {
+            display: none;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<h2>Ohje:</h2>
+<p>Kirjoita murtoluvut muodossa (jos tarvitset) esim. kaksi kolmasosaa on 2/3 supistetuimmassa muodossa sekä prosenttiluvut muodossa esim. 30% yhteen.</p>
+
+<p>1. Muuta 25 % desimaaliluvuksi.</p>
+<input id="answer1" type="text"/><button onclick="checkAnswer(1)">Tarkista</button><div id="feedback1"></div><div id="solution1" class="solution">Ratkaisu: 25 % = \( \frac{25}{100} = 0{,}25 \)</div>
+
+<p>2. Muuta 0,4 prosenttiluvuksi.</p>
+<input id="answer2" type="text"/><button onclick="checkAnswer(2)">Tarkista</button><div id="feedback2"></div><div id="solution2" class="solution">Ratkaisu: \( 0{,}4 \cdot 100 = 40 \% \)</div>
+
+<p>3. Muuta \( \frac{1}{2} \) prosenttiluvuksi.</p>
+<input id="answer3" type="text"/><button onclick="checkAnswer(3)">Tarkista</button><div id="feedback3"></div><div id="solution3" class="solution">Ratkaisu: \( \frac{1}{2} = 0{,}5 \cdot 100 = 50 \% \)</div>
+
+<p>4. Muuta 20 % murtoluvuksi.</p>
+<input id="answer4" type="text"/><button onclick="checkAnswer(4)">Tarkista</button><div id="feedback4"></div><div id="solution4" class="solution">Ratkaisu: 20 % = \( \frac{20}{100} = \frac{1}{5} \)</div>
+
+<p>5. Mikä desimaaliluku vastaa 75 %?</p>
+<input id="answer5" type="text"/><button onclick="checkAnswer(5)">Tarkista</button><div id="feedback5"></div><div id="solution5" class="solution">Ratkaisu: 75 % = \( \frac{75}{100} = 0{,}75 \)</div>
+
+<p>6. Mikä murtoluku vastaa 0,25?</p>
+<input id="answer6" type="text"/><button onclick="checkAnswer(6)">Tarkista</button><div id="feedback6"></div><div id="solution6" class="solution">Ratkaisu: 0,25 = \( \frac{25}{100} = \frac{1}{4} \)</div>
+
+<p>7. Mikä prosenttiluku vastaa \( \frac{3}{4} \)?</p>
+<input id="answer7" type="text"/><button onclick="checkAnswer(7)">Tarkista</button><div id="feedback7"></div><div id="solution7" class="solution">Ratkaisu: \( \frac{3}{4} = 0,75 \cdot 100 = 75 \% \)</div>
+
+<p>8. Mikä murtoluku vastaa 60 %?</p>
+<input id="answer8" type="text"/><button onclick="checkAnswer(8)">Tarkista</button><div id="feedback8"></div><div id="solution8" class="solution">Ratkaisu: 60 % = \( \frac{60}{100} = \frac{3}{5} \)</div>
+
+<p>9. Mikä desimaaliluku vastaa \( \frac{1}{10} \)?</p>
+<input id="answer9" type="text"/><button onclick="checkAnswer(9)">Tarkista</button><div id="feedback9"></div><div id="solution9" class="solution">Ratkaisu: \( \frac{1}{10} = 0{,}1 \)</div>
+
+<p>10. Mikä prosenttiluku vastaa 0,01?</p>
+<input id="answer10" type="text"/><button onclick="checkAnswer(10)">Tarkista</button><div id="feedback10"></div><div id="solution10" class="solution">Ratkaisu: \( 0,01 \cdot 100 = 1 \% \)</div>
+
+<script>
+function checkAnswer(index) {
+    const correctAnswers = {
+        1: "0,25",
+        2: "40%",
+        3: "50%",
+        4: "1/5",
+        5: "0,75",
+        6: "1/4",
+        7: "75%",
+        8: "3/5",
+        9: "0,1",
+        10: "1%"
+    };
+    const userAnswer = document.getElementById("answer" + index).value.trim();
+    const feedback = document.getElementById("feedback" + index);
+    const solution = document.getElementById("solution" + index);
+    if (userAnswer === correctAnswers[index]) {
+        feedback.innerHTML = "Oikein!";
+        feedback.style.color = "green";
+    } else {
+        feedback.innerHTML = "Väärin. Oikea vastaus on " + correctAnswers[index];
+        feedback.style.color = "red";
+    }
+    solution.style.display = "block";
+}
+</script>
+</body>
+</html>
